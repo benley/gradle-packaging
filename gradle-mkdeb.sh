@@ -10,17 +10,19 @@ that provides a build-by-convention integration for Ivy. It
 gives you always the choice between the flexibility of Ant
 and the convenience of a build-by-convention behavior."
 
+VERSION="2.3"
+
 wget -c \
-  https://downloads.gradle.org/distributions/gradle-2.2.1-bin.zip
+  https://downloads.gradle.org/distributions/gradle-${VERSION}-bin.zip
 mkdir -p build/opt
-unzip -q -o -d build/opt/ gradle-2.2.1-bin.zip
+unzip -q -o -d build/opt/ gradle-${VERSION}-bin.zip
 
 fpm_args=(
   -t deb
   -s dir
   --force
-  --name gradle-2.2.1
-  --version 2.2.1
+  --name gradle-${VERSION}
+  --version ${VERSION}
   --iteration 1
   --depends default-jre-headless
   --architecture all
@@ -29,8 +31,9 @@ fpm_args=(
   --license "Apache-2.0"
   --category java
   --url https://www.gradle.org/
-  --after-install gradle-2.2.1.postinst
-  --before-remove gradle-2.2.1.prerm
+  --after-install gradle.postinst.erb
+  --before-remove gradle.prerm.erb
+  --template-scripts
   -C build
   --provides groovy
   --exclude '*.bat'
