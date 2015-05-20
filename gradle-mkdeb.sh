@@ -11,6 +11,7 @@ gives you always the choice between the flexibility of Ant
 and the convenience of a build-by-convention behavior."
 
 VERSION="2.4"
+ITERATION="2"
 
 wget -c \
   https://downloads.gradle.org/distributions/gradle-${VERSION}-bin.zip
@@ -21,10 +22,10 @@ fpm_args=(
   -t deb
   -s dir
   --force
-  --name gradle-${VERSION}
-  --version ${VERSION}
-  --iteration 1
-  --depends default-jre-headless
+  --name "gradle-${VERSION}"
+  --version "${VERSION}"
+  --iteration "${ITERATION}"
+  --depends "java-runtime | default-jre-headless"
   --architecture all
   --maintainer "Benjamin Staffin <ben@folsomlabs.com>"
   --vendor "Folsom Labs"
