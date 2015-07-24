@@ -10,7 +10,7 @@ that provides a build-by-convention integration for Ivy. It
 gives you always the choice between the flexibility of Ant
 and the convenience of a build-by-convention behavior."
 
-VERSION="2.4"
+VERSION=${1:-2.4}
 ITERATION="2"
 
 wget -c \
