@@ -27,8 +27,7 @@ fpm_args=(
   --iteration "${ITERATION}"
   --depends "java-runtime | default-jre-headless"
   --architecture all
-  --maintainer "Benjamin Staffin <ben@folsomlabs.com>"
-  --vendor "Folsom Labs"
+  --maintainer "Benjamin Staffin <benley@gmail.com>"
   --license "Apache-2.0"
   --category java
   --url https://www.gradle.org/
