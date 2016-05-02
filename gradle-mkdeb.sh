@@ -25,7 +25,7 @@ fpm_args=(
   --name "gradle-${VERSION}"
   --version "${VERSION}"
   --iteration "${ITERATION}"
-  --depends "java-runtime | default-jre-headless"
+  --depends "java2-runtime | java-runtime | default-jre-headless"
   --architecture all
   --maintainer "Benjamin Staffin <benley@gmail.com>"
   --license "Apache-2.0"
